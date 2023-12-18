@@ -1,0 +1,17 @@
+@import "../var.scss";
+
+.#{$classPrefix}-color-tray-root {
+  position: relative;
+  --size: 100px;
+  background: radial-gradient(circle var(--size), #fff, transparent),
+    conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.#{$classPrefix}-color-tray-ball {
+  position: absolute;
+  border: 2px solid var(--slider-ball-color, #a0a0a0);
+  border-radius: 50%;
+  box-sizing: border-box;
+}

@@ -1,0 +1,56 @@
+@import "../var.scss";
+
+.#{$classPrefix}-color-input-root {
+  width: 50%;
+  background-color: white;
+  padding: 2%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 100%;
+  display: grid;
+  align-items: center;
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.#{$classPrefix}-color-input-current-color {
+  width: 10%;
+  padding-bottom: 10%;
+  background: hsl(
+    var(--cur-hue, 0),
+    var(--cur-saturation, 100%),
+    var(--cur-lightness, 50%)
+  );
+  border-radius: 5px;
+  border: 2px solid #ccc;
+}
+
+.#{$classPrefix}-color-input-line {
+  display: grid;
+  grid-template-columns: 3fr 6fr 1fr;
+  & input {
+    font-size: 1em;
+    padding-left: 0.4em;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    border: 1px solid #ccc;
+    outline: 1px solid #bbb;
+    border-radius: 2px;
+  }
+}
+
+.#{$classPrefix}-color-input-label {
+  display: flex;
+  align-items: center;
+}
+
+.#{$classPrefix}-color-input-copy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  cursor: pointer;
+  &:active {
+    opacity: 0.5;
+  }
+  color: #bbb;
+}

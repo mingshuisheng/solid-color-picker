@@ -1,0 +1,42 @@
+{
+  "author": "mingshuisheng",
+  "name": "@mingshuisheng/solid-color-picker",
+  "type": "module",
+  "version": "0.0.1",
+  "main": "dist/libs.js",
+  "types": "dist/libs.d.ts",
+  "repository": "https://github.com/mingshuisheng/solid-color-picker",
+  "homepage": "https://github.com/mingshuisheng/solid-color-picker",
+  "exports": {
+    ".": "./dist/libs.js",
+    "./style": "./dist/style.css"
+  },
+  "description": "a solidjs component library",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "license": "Apache License",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/tinycolor2": "^1.4.6",
+    "jsdom": "^23.0.1",
+    "sass": "^1.69.5",
+    "solid-js": "^1.8.7",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8",
+    "vite-plugin-solid": "^2.8.0",
+    "vitest": "^1.0.4"
+  },
+  "peerDependencies": {
+    "solid-js": "^1.8.7"
+  },
+  "dependencies": {
+    "colord": "^2.9.3",
+    "debounce": "^2.0.0",
+    "tinycolor2": "^1.6.0"
+  }
+}

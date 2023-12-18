@@ -1,0 +1,20 @@
+@import "../var.scss";
+
+.#{$classPrefix}-slider-root {
+  position: relative;
+  background: var(--slider-track-color, black);
+  width: 100%;
+  height: 100%;
+  border-radius: calc(infinity * 1px);
+  border: 2px solid #6a6a6a;
+  box-sizing: border-box;
+}
+
+.#{$classPrefix}-slider-ball {
+  position: absolute;
+  border: 2px solid var(--slider-ball-color, #a0a0a0);
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  box-sizing: border-box;
+}

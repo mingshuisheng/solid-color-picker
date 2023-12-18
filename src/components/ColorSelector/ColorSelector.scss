@@ -1,0 +1,34 @@
+@import "../var.scss";
+
+.#{$classPrefix}-selector-root {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.#{$classPrefix}-selector-tray-area {
+  width: 80%;
+  padding-bottom: 80%;
+}
+.#{$classPrefix}-selector-saturation,
+.#{$classPrefix}-selector-brightness {
+  width: 80%;
+  padding-bottom: 5%;
+}
+.#{$classPrefix}-selector-saturation {
+  --slider-track-color: linear-gradient(
+    to right,
+    white,
+    hsl(var(--cur-hue, 0), 100%, 50%)
+  );
+}
+
+.#{$classPrefix}-selector-brightness {
+  --slider-track-color: linear-gradient(
+    to right,
+    black,
+    hsl(var(--cur-hue, 0), 100%, 50%)
+  );
+}
