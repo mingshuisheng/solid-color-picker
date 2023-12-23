@@ -2,7 +2,7 @@
   "author": "mingshuisheng",
   "name": "@mingshuisheng/solid-color-picker",
   "type": "module",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "dist/libs.js",
   "types": "dist/libs.d.ts",
   "repository": "https://github.com/mingshuisheng/solid-color-picker",
