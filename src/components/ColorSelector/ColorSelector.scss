@@ -12,8 +12,7 @@
   width: 80%;
   padding-bottom: 80%;
 }
-.#{$classPrefix}-selector-saturation,
-.#{$classPrefix}-selector-brightness {
+.#{$classPrefix}-selector-bar {
   width: 80%;
   padding-bottom: 5%;
 }
@@ -29,6 +28,14 @@
   --slider-track-color: linear-gradient(
     to right,
     black,
+    hsl(var(--cur-hue, 0), 100%, 50%)
+  );
+}
+
+.#{$classPrefix}-selector-alpha {
+  --slider-track-color: linear-gradient(
+    to right,
+    transparent,
     hsl(var(--cur-hue, 0), 100%, 50%)
   );
 }

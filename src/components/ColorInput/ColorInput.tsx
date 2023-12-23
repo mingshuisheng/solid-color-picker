@@ -19,6 +19,31 @@ export function ColorInput(props: ColorInputProps) {
       props.onCurrentColorChange(newColor);
     }
   }, 900);
+
+  const getAlpha = () => {
+    const a = props.currentColor.getAlpha();
+    return a.toFixed(2);
+  };
+
+  const toRgbaString = () => {
+    const { r, g, b } = props.currentColor.toRgb();
+    return `rgba(${r}, ${g}, ${b}, ${getAlpha()})`;
+  };
+
+  const toHsvaString = () => {
+    const { h, s, v } = props.currentColor.toHsv();
+    return `hsva(${Math.round(h)}, ${Math.round(s * 100)}%, ${Math.round(
+      v * 100
+    )}%, ${getAlpha()})`;
+  };
+
+  const toHslString = () => {
+    const { h, s, l } = props.currentColor.toHsl();
+    return `hsla(${Math.round(h)}, ${Math.round(s * 100)}, ${Math.round(
+      l * 100
+    )}, ${getAlpha()})`;
+  };
+
   return (
     <div class={createClassName("root")}>
       <div>
@@ -26,31 +51,31 @@ export function ColorInput(props: ColorInputProps) {
       </div>
       <ColorInputLine
         label="hex"
-        value={"#" + props.currentColor.toHex()}
+        value={props.currentColor.toHex8String()}
         onValueChange={handleColorChange}
         prefix="#"
         suffix=""
       />
       <ColorInputLine
-        label="rgb"
-        value={props.currentColor.toRgbString()}
-        prefix="rgb("
+        label="rgba"
+        value={toRgbaString()}
+        prefix="rgba("
         suffix=")"
-        onValueChange={(v) => handleColorChange(`rgb(${v})`)}
+        onValueChange={(v) => handleColorChange(`rgba(${v})`)}
       />
       <ColorInputLine
-        label="hsv/hsb"
-        value={props.currentColor.toHsvString()}
-        prefix="hsv("
+        label="hsva/hsba"
+        value={toHsvaString()}
+        prefix="hsva("
         suffix=")"
-        onValueChange={(v) => handleColorChange(`hsv(${v})`)}
+        onValueChange={(v) => handleColorChange(`hsva(${v})`)}
       />
       <ColorInputLine
-        label="hsl"
-        value={props.currentColor.toHslString()}
-        prefix="hsl("
+        label="hsla"
+        value={toHslString()}
+        prefix="hsla("
         suffix=")"
-        onValueChange={(v) => handleColorChange(`hsl(${v})`)}
+        onValueChange={(v) => handleColorChange(`hsla(${v})`)}
       />
     </div>
   );

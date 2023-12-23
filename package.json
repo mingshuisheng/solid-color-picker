@@ -2,7 +2,7 @@
   "author": "mingshuisheng",
   "name": "@mingshuisheng/solid-color-picker",
   "type": "module",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "dist/libs.js",
   "types": "dist/libs.d.ts",
   "repository": "https://github.com/mingshuisheng/solid-color-picker",
@@ -35,7 +35,6 @@
     "solid-js": "^1.8.7"
   },
   "dependencies": {
-    "colord": "^2.9.3",
     "debounce": "^2.0.0",
     "tinycolor2": "^1.6.0"
   }

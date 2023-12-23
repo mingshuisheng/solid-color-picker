@@ -14,6 +14,7 @@ interface HueAndSaturation {
 export interface ColorTrayProps extends HueAndSaturation {
   onHueChange?(hue: number): void;
   onSaturationChange?(saturation: number): void;
+  title?: string;
   class?: string | undefined;
 }
 const createClassName = createByPrefix("color-tray");
@@ -71,6 +72,7 @@ export function ColorTray(props: ColorTrayProps) {
   };
   return (
     <div
+      title={props.title}
       ref={tray}
       class={rootClass()}
       style={{ "--size": trayRadius() + "px" }}
