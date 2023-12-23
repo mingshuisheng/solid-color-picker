@@ -5,7 +5,7 @@ import tinyColor from "tinycolor2";
 import { ColorSelector } from "../ColorSelector/ColorSelector";
 import { ColorInput } from "../ColorInput/ColorInput";
 
-type ColorType = tinyColor.ColorFormats.HSV;
+type ColorType = tinyColor.ColorFormats.HSVA;
 const formColor = tinyColor;
 
 export interface ColorPickerProps {
@@ -30,6 +30,10 @@ export function ColorPicker(props: ColorPickerProps) {
     props.onColorChange?.({ ...props.color, v });
   };
 
+  const setAlpha = (a: number) => {
+    props.onColorChange?.({ ...props.color, a });
+  };
+
   const currentHsl = () => currentColor().toHsl();
 
   const handleInputColor = (newColor: tinyColor.Instance) => {
@@ -51,15 +55,18 @@ export function ColorPicker(props: ColorPickerProps) {
         "--cur-hue": Math.floor(props.color.h),
         "--cur-saturation": Math.floor(currentHsl().s * 100) + "%",
         "--cur-lightness": Math.floor(currentHsl().l * 100) + "%",
+        "--cur-alpha": currentHsl().a.toFixed(2),
       }}
     >
       <ColorSelector
         h={props.color.h}
         s={props.color.s}
         v={props.color.v}
+        a={props.color.a}
         onHueChange={setHue}
         onSaturationChange={setSaturation}
         onBrightnessChange={setBrightness}
+        onAlphaChange={setAlpha}
       />
       <ColorInput
         currentColor={currentColor()}

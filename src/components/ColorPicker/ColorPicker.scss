@@ -2,10 +2,11 @@
 .#{$classPrefix}-color-picker-root {
   width: 100%;
   display: flex;
-  background: hsl(
+  background: hsla(
     var(--cur-hue, 0),
     var(--cur-saturation, 100%),
-    var(--cur-lightness, 50%)
+    var(--cur-lightness, 50%),
+    var(--cur-alpha, 1)
   );
   box-sizing: border-box;
   padding: 1%;

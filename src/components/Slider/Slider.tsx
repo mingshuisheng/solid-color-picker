@@ -9,6 +9,7 @@ export interface SliderProps {
   class?: string | undefined;
   style?: JSX.CSSProperties | string;
   percent?: number;
+  title?: string;
   onPercentChange?: (percent: number) => void;
 }
 const createClassName = createByPrefix("slider");
@@ -39,7 +40,12 @@ export function Slider(props: SliderProps) {
   };
 
   return (
-    <div ref={track} class={rootClass()} style={props.style}>
+    <div
+      ref={track}
+      class={rootClass()}
+      style={props.style}
+      title={props.title}
+    >
       <div
         class={createClassName("ball")}
         style={{
